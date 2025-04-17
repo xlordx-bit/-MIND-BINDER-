@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindBinder - AI Mentalist Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎩 MindBinder</h1>
+            <p>The AI that reads your mind...</p>
+        </header>
+
+        <div class="game-area">
+            <div id="thought-bubble" class="hidden">
+                <p>Think of an object, and I'll try to guess it...</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+
+            <div id="question-area">
+                <div class="question-counter">Question <span id="current-question-num">1</span> of <span id="total-questions">8</span></div>
+                <p id="current-question"></p>
+                <div class="buttons">
+                    <button id="yes-btn" class="btn">Yes</button>
+                    <button id="no-btn" class="btn">No</button>
+                </div>
+            </div>
+
+            <div id="result-area" class="hidden">
+                <div class="crystal-ball">🔮</div>
+                <p>I believe you're thinking of...</p>
+                <h2 id="final-guess"></h2>
+                <button id="play-again" class="btn">Play Again</button>
+            </div>
+
+            <div id="learning-area" class="hidden">
+                <p>My crystal ball is cloudy! What were you thinking of?</p>
+                <div class="input-group">
+                    <input type="text" id="new-item-input" placeholder="Enter the item name">
+                    <button id="teach-btn" class="btn">Teach Me</button>
+                </div>
+                <button id="skip-learning" class="btn">Skip</button>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
